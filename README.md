@@ -1,13 +1,14 @@
-Linear programming
-==================
+Linear programming tutorial
+===========================
 
-This is short tutorial on linear programming (LP) that used to be part of the [No bullshit guide to linear algebra](http://gum.co/noBSLA), 
-but was cut from the main text because it might not be interesting to all readers.
+[This short tutorial on linear programming](https://ivanistheone.github.io/linear_programming/tutorial.pdf) 
+used to be part of the [No bullshit guide to linear algebra](http://gum.co/noBSLA), 
+but was cut from the main text of the book, because it might not be interesting to all readers.
 
 Business students will find this tutorial useful as it gives three points of view:
   - algorithmic (the steps of the simplex algorithm)
-  - graphical (visual representation of row pivots)
-  - numerical (fast computations using SymPy)
+  - graphical (visual representation of the various coordinate systems used during algorithm)
+  - numerical (practical computations using the computer algebr system SymPy)
 
 
 Story
@@ -26,7 +27,6 @@ Todo
 ----
   - Finish the section on duality 
   - Add more illustrations
-  - Make pdf accessible at a fixed URL so I can link to it in book
 
 
 The book
@@ -38,7 +38,8 @@ to appear: the [No bullshit guide to linear algebra](http://gum.co/noBSLA).
 
 Reuse
 -----
-Feel free to use and abuse this text for you classes.
+Feel free to use this text for you classes or tachings on LP.
 The license is MIT, a.k.a, do what you want with it.
 
 The TikZ code used to generate the graphs is available upon request.
+
