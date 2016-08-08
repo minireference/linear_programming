@@ -27,6 +27,7 @@ Todo
 ----
   - Finish the section on duality 
   - Add more illustrations
+  - Express every tableau as a s series of inequalities (as per Prof. Avis recommendation)
 
 
 The book
