@@ -1,0 +1,50 @@
+%!TEX root = ../tutorial.tex
+
+\begin{problems}{LPTUT}
+
+	%%%    LINEAR PROGRAMMING     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\begin{problem}
+		Solve the following linear program:
+		\begin{align*}
+			\max_{x,y} 	g(x,y) \ &=\  x  \, + \,  3y, \\
+		\intertext{subject to the constraints}
+					2x 	+ 3y	\ &\leq \		24,	\\
+					x	- y	\ &\leq \	 	6,	\\
+					           y	\ &\leq \	 	6,	\\
+					x \geq 0, 	& \quad  	y \geq 0.
+		\end{align*}
+		%		\begin{hint}
+		%		\end{hint}
+		\begin{answer}$\max g(x,y) = 21$ and occurs at $x=3$, $y=6$.\end{answer}
+		\begin{solution}
+			Use the simplex method if solving the problem by hand.
+
+			The code to solve using \texttt{linprog} is as follows:
+\begin{verbatim}
+from from scipy.optimize import linprog
+from numpy import array
+c = [-1,-3]
+D = array([[ 2, 3, 24],
+           [ 1,-1,  6],
+           [ 0, 1,  6],
+           [-1, 0,  0],
+           [ 0,-1,  0]]
+A = D[:,0:2]
+b = D[:,2]
+linprog(c, A_ub=A, b_ub=b)
+\end{verbatim}
+%	  status: 0
+%	   slack: array([ 0.,  9.,  0.,  3.,  6.])
+%	 success: True
+%	     fun: -21.0
+%	       x: array([ 3.,  6.])
+%	 message: 'Optimization terminated successfully.'
+%	     nit: 2				
+		\end{solution}
+	\end{problem}
+
+
+
+     
+\end{problems}

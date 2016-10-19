@@ -23,6 +23,11 @@
 
 \input{00.main.hdr.tex}
 
+%%%% EXERCISES and PROBLEMS   %%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{answers}
+\usepackage[nosolutionfiles]{answers}   % use when PROOFREADING
+\input{00.exercises_problems.hdr.tex}
+
 
 
 \begin{document}
@@ -1069,7 +1074,7 @@
 		setting up the problem description and calling the function \texttt{linprog}:
 		
 \begin{verbatim}
->>> from scipy.optimize import linprog   
+>>> from scipy.optimize import linprog
 >>> c = [-3000, -2000]          # coefficients of f(x) 
 >>> A = [[  1,  0],             # coefficients of the constraints
          [  0,  1],
@@ -1384,6 +1389,11 @@
 		When the objective function is quadratic and constraints are linear functions
 		the optimization problem is called \emph{quadratic programming}.
 
+
+		
+	\subsection{Practice problems}
+
+		\input{problems/problems.tex}
 
 		
 	\subsection{Links}
