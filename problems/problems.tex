@@ -2,7 +2,20 @@
 
 \begin{problems}{LPTUT}
 
+
 	%%%    LINEAR PROGRAMMING     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\begin{problem}
+		Use \texttt{SymPy} to reproduce the steps in the following example video
+		\href{http://youtu.be/XK26I9eoSl8}{\texttt{http://youtu.be/XK26I9eoSl8}}
+		Confirm you obtain the same answer.
+
+		\begin{answer}$\max_{x,y,z} P(x,y,z) = 708$ at 	$x=48$, $y=84$, $z=0$.\end{answer}
+
+		%	\begin{solution}
+		%	\end{solution}
+	\end{problem}
+
 
 	\begin{problem}
 		Solve the following linear program:
@@ -14,9 +27,9 @@
 					           y	\ &\leq \	 	6,	\\
 					x \geq 0, 	& \quad  	y \geq 0.
 		\end{align*}
-		%		\begin{hint}
-		%		\end{hint}
+
 		\begin{answer}$\max g(x,y) = 21$ and occurs at $x=3$, $y=6$.\end{answer}
+
 		\begin{solution}
 			Use the simplex method if solving the problem by hand.
 
@@ -45,6 +58,4 @@ linprog(c, A_ub=A, b_ub=b)
 	\end{problem}
 
 
-
-     
 \end{problems}
