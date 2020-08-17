@@ -672,9 +672,9 @@
 		% advantageous
 
 		
-		Having decided to increase $y'$ we must now 
-		By what amount can we increase variable $y'$ before we hit one of the constraints?
-		We can find out by computing the ratios of the constants in the rightmost column of the tableau,
+		Having decided to increase $y'$
+		we must now decide by what amount can we increase the variable $y'$ before we hit one of the constraints?
+		We can find this out by computing the ratios of the constants in the rightmost column of the tableau,
 		and the $y'$ coefficients of each row.
 		The first constraint does not contain $y'$ at all, so it allows any increase in $y'$.
 		The second constraint will become active when $y' = 4$.
@@ -683,8 +683,8 @@
 		%>>> [  M[i,6]/M[i,1] for i in range(0,4) ]
 		%[oo& 4& 1& 2]
 		%
-		The largest increase in $y'$ we can make is $y'=1$.
-		We will use the third row of the tableau as the \emph{pivot row},
+		The largest increase in $y'$ that satisfies all the constrains is $y'=1$.
+		We'll use the third row of the tableau as the \emph{pivot row},
 		which means we de-slack $s'_3$ from $1$ to $0$ and correspondingly increasing $y'$ from $0$ to $1$.
 		After pivoting, the values of the six variables are
 		\[
@@ -813,7 +813,7 @@
 		Linear programming problems with hundreds and even thousands of variables are common in real-world scenarios.
 		For this reason, it is very important to approach linear programming problems 
 		in a systematic manner so that we can teach a computer to do the steps for us.
-		In the next section we enlist the help \texttt{SymPy} to retrace the steps of the simplex algorithm for the Xapper--Yapper linear program.
+		In the next section we enlist the help of \texttt{SymPy} to retrace the steps of the simplex algorithm for the Xapper--Yapper linear program.
 				
 
 \subsection{Using \texttt{SymPy} to solve linear programming problems}
@@ -1152,7 +1152,7 @@
 			The assumption is that a market exists where each type of resource (production facility, labour, and logistics) can be bought or sold.
 			The \emph{shadow prices} represent the price of each resource in such a market.
 			The company has the opportunity to rent out their production facilities instead of using them. 
-			Alternatively, the company could increase it's production by renting the necessary facilities from the market.
+			Alternatively, the company could increase its production by renting the necessary facilities from the market.
 			We'll use the variables $\lambda_1, \lambda_2, \lambda_3$, and $\lambda_4$ to describe the shadow prices:
 			
 			\begin{itemize}
@@ -1222,7 +1222,7 @@
 
 		\subsubsection{The dual problem}			
 
-			Imagine that your Xapper and Yapper company wants to increase it's production rate by rent resources from the market.
+			Imagine that your Xapper and Yapper company wants to increase its production rate by rent resources from the market.
 			The \emph{dual problem} is the task of finding the shadow prices $\{\lambda_i\}$ that minimize the production costs.
 			The original problem involves a maximization of the profit function,
 			while the dual problem involves a minimization of the costs function:
@@ -1252,31 +1252,14 @@
 	
 
 			\noindent
-			Performing the minimization in the dual problem corresponds to the company following 
-			an ``honest'' but ``greedy'' strategy.
-			%
+			Performing the minimization in the dual problem corresponds to the company following an ``honest'' but ``greedy'' strategy.
 			The constraints in the dual problem describe the ``honesty'' requirement for the company:
-			the company is willing to forgo producing each type of machine and 
-			instead sell the resources if it is offered prices that exceed the profit it would obtain from producing the machine.
-			%
-			
-			
-			
+			the company is willing to forgo producing each type of machine
+			and instead sell the resources if it is offered prices that exceed the profit it would obtain from producing the machine.
+			We assume that the firm starts with a position of $b_i$ units of the $i$\textsuperscript{th} resource
+			and we may buy or sell this resource at a price determined by an external market.
 
-			
-			
 
-			
-			
-			
-			
-			
-					
-			Assume that the firm starts with a position of bi units of the ith resource and may buy or sell this resource at a price 
-			 determined by an external market.
-	
-				
-			
 		\subsubsection{General formulation}
 		
 			Consider the $n$-dimensional linear programming problem of maximizing $g(\vec{x}) \equiv \vec{c} \cdot \vec{x} \equiv  \vec{c}^\sfT \vec{x}$.
@@ -1312,18 +1295,16 @@
 			As a mathematical convention, 
 			when we discuss linear combinations of constraint equations in optimization problems,
 			we call the coefficients of the linear combination \emph{Lagrange multipliers} and denote them $\lambda_i$ (the Greek letter \emph{lambda}).
-			%
 			The $m$ Lagrange multipliers $\lambda_i$ are complementary to the $m$ slack variables $s_i$.
 			The slack variable $s_i$ is nonzero when the $i$\textsuperscript{th} constraint is loose,
 			and zero when the constraint is tight.
 			Inversely, the Lagrange multiplier $\lambda_i$ is zero when the $i$\textsuperscript{th} constraint is loose,
 			and nonzero when a constraint is tight.
 
-
 			% self-COMMENT  fix explanation below:
-			We can understand the dual problem as the search for the minimum value 
+			We can understand the dual problem as the search for the minimum value
 			for the linear combination of the constraint equations for the rate region,
-			which satisfies the constraint 
+			which satisfies the constraint
 			\[	
 				\vec{c} \leq \vec{\lambda}^\sfT A.
 			\]
@@ -1358,31 +1339,33 @@
 			 Since $g(\vec{x}) \leq h(\vec{\lambda})$ for all $\vec{x}$ and $\vec{\lambda}$ that are feasible,
 			 and since $g(\vec{x}^*)$ is the maximum value of the primal,
 			 it means $\displaystyle \vec{\lambda}^* = \mathop{\textrm{argmin}}_{\vec{\lambda}} h(\vec{\lambda})$.
-			
-			\url{http://www.slideshare.net/preetyrateria/economic-interpretation-of-duality-shadow-price-and-the-complementary-slackness-property}
+
+			% TODO incorporate insights from: http://www.slideshare.net/preetyrateria/economic-interpretation-of-duality-shadow-price-and-the-complementary-slackness-property
 			
 			The dual problem is the search for the minimum value of $h(\vec{\lambda})$.
-			Studying the dual of a linear programming problem can help us characterize the 
-			solution to of the primal problem, even before we have found the actual solution.
-			
-			The maximum of the function $g(\vec{x})$ and the minimum 
-			sometimes make the problem easier to solve
-			If $\vec{x}$ is primal-feasible an
-	
-	
-	
+			Studying the dual of a linear programming problem can help us characterize the solution to of the primal problem,
+			even before we have found the actual solution.
+
+			Switching from searching for the maximum of the function $g(\vec{x})$ to searching for the minimum of $h(\vec{\lambda})$
+			sometimes makes the problem easier to solve.
+			% If $\vec{x}$ is primal-feasible an
+
+
 		\subsubsection{Complementary slackness conditions}		
 
 			If a variable is positive, its corresponding (complementary) dual constraint holds with equality.
 			If a dual constraint holds with strict inequality, then the corresponding (complementary) primal variable must be zero.
-			
-			
-			the shadow price is the instantaneous change, per unit of the constraint, in the objective value of the optimal solution of an optimization problem obtained by relaxing the constraint. In other words, it is the marginal utility of relaxing the constraint, or, equivalently, the marginal cost of strengthening the constraint.
-					
-					
-			More formally, the shadow price is the value of the Lagrange multiplier at the optimal solution, which means that it is the infinitesimal change in the objective function arising from an infinitesimal change in the constraint. This follows from the fact that at the optimal solution the gradient of the objective function is a linear combination of the constraint function gradients with the weights equal to the Lagrange multipliers. 
-				
-					 
+			The shadow price is the instantaneous change, per unit of the constraint, in the objective value of the optimal solution
+			of an optimization problem obtained by relaxing the constraint.
+			In other words, it is the marginal utility of relaxing the constraint,
+			or, equivalently, the marginal cost of strengthening the constraint.
+
+			More formally, the shadow price is the value of the Lagrange multiplier at the optimal solution,
+			which means that it is the infinitesimal change in the objective function arising from an infinitesimal change in the constraint.
+			This follows from the fact that at the optimal solution the gradient of the objective function
+			is a linear combination of the constraint function gradients with the weights equal to the Lagrange multipliers.
+
+
 
 	\paragraph{Quadratic programming}
 	
@@ -1390,12 +1373,13 @@
 		the optimization problem is called \emph{quadratic programming}.
 
 
-		
+
 	\subsection{Practice problems}
 
 		\input{problems/problems.tex}
 
-		
+
+
 	\subsection{Links}
 
 		\noindent
@@ -1433,8 +1417,6 @@
 		[ Linear programming course notes ] \\
 		\href{http://www.math.washington.edu/~burke/crs/407/lectures/}
 	            {\texttt{http://www.math.washington.edu/\textasciitilde{}burke/crs/407/lectures/}}
-
-
 
 
 
